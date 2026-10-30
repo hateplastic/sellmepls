@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+:root {
+  color-scheme: dark;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #0b0d0c;
+  color: #f1f5ec;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: #caff68;
+  color: #0b0d0c;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+button,
+a,
+input,
+textarea,
+select {
+  outline-offset: 5px;
+}
+:focus-visible {
+  outline: 2px solid #caff68;
+}
+input,
+textarea,
+select {
+  color: #eef2e8;
+  background: #101410;
+  border: 1px solid #303730;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+}
+textarea {
+  resize: vertical;
+}
+label {
+  display: block;
+  font-size: 14px;
+  color: #b9c2b8;
+}
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #caff68;
+}
+input[type="file"] {
+  font-size: 13px;
+}
+input::file-selector-button {
+  background: #283127;
+  color: #e0e9dc;
+  border: 0;
+  border-radius: 5px;
+  padding: 6px 9px;
+  margin-right: 10px;
+}
+@layer components {
+  .shell {
+    @apply mx-auto max-w-7xl px-5 sm:px-8;
+  }
+  .button-primary {
+    @apply inline-flex justify-center items-center gap-2 rounded-lg bg-acid px-5 py-3 text-sm font-bold text-ink transition hover:bg-lime-200;
+  }
+  .button-secondary {
+    @apply inline-flex justify-center items-center gap-2 rounded-lg border border-white/15 px-4 py-3 text-sm transition hover:bg-white/5;
+  }
+  .panel {
+    @apply rounded-2xl border border-white/10 bg-[#111611];
+  }
+  .eyebrow {
+    @apply font-mono uppercase text-xs tracking-[.2em] text-acid;
+  }
+  .status-dot {
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-acid;
+  }
+  .wallet-menu {
+    @apply absolute right-0 top-full z-50 mt-3 w-72 rounded-xl border border-white/15 bg-[#161c15] p-4 shadow-2xl;
+  }
+}
+.grid-art {
+  background-image:
+    linear-gradient(#caff680b 1px, transparent 1px),
+    linear-gradient(90deg, #caff680b 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero-orb {
+  width: 220px;
+  height: 220px;
+  border: 1px solid #caff6844;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 65px #caff6822,
+    0 0 80px #caff6810;
+  transform: rotate(-22deg);
+  position: relative;
+}
+.hero-orb:before,
+.hero-orb:after {
+  content: "";
+  position: absolute;
+  inset: 35px -18px;
+  border: 1px solid #caff6880;
+  border-radius: 50%;
+}
+.hero-orb:after {
+  inset: -18px 65px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

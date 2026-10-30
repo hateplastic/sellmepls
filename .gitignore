@@ -1,0 +1,23 @@
+node_modules/
+.next/
+.env*
+!.env.example
+dist/
+coverage/
+*.tsbuildinfo
+.npm-cache/
+artifacts/
+out/
+cache/
+dev-server.log
+dev-server.error.log
+worker.log
+worker.error.log
+logs/
+Sellmepls Launcher.exe
+
+.vercel/
+*.pem
+*.key
+*.p12
+*.pfx
